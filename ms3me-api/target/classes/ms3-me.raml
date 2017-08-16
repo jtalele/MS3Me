@@ -1,0 +1,29 @@
+#%RAML 0.8
+baseUri: https://mocksvc.mulesoft.com/mocks/f91460eb-0df7-481c-ad91-46c5de28428c
+#baseUri: https://jtinc.com/multiplesOf
+title: MS3-ME
+version: 1.0
+
+/ms3me:
+  get:
+    queryParameters: 
+      firstNumber:
+        type: integer
+        required: true
+        minimum: 1
+        maximum: 200
+      lastNumber:
+        type: integer
+        required: true
+        minimum: 1
+        maximum: 200
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+              [
+              {"Number":3,"Converted":"ME"},
+              {"Number":7,"Converted":"MS3"},
+              {"Number":21,"Converted":"MS3 and ME"}
+              ]
